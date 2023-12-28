@@ -15,75 +15,48 @@ let appWhiteColor = Color(red: 255 / 255, green: 247 / 255, blue: 214 / 255) //#
 let backgroundColor = Color(red: 8 / 255, green: 37 / 255, blue: 59 / 255) // #08253B
 let lightGreenColor = Color(red: 11 / 255, green: 48 / 255, blue: 73 / 255) // #0B3049
 let buttonGreenColor = Color(red: 33 / 255, green: 135 / 255, blue: 145 / 255) // #218791
+let textFieldColor = Color(red: 58 / 255, green: 84 / 255, blue: 107 / 255) // #3A546B
+
 
 
 
 struct LoginScreen: View {
     
     
+    @State private var isAuthenticated = false
+    
+    @State private var showingPeopleView = false
+    
+    
     //Variables
     @State private var email = ""
     @State private var password = ""
     @State private var isPasswordVisible = false
-    @State private var selectedRole = "Manager"
-    
-    @State private var navigateTo: Role?
-    
-    @State private var navigateToManager = false
-    @State private var navigateToEmployee = false
     
     @State private var showAlert = false
-        @State private var alertMessage = ""
+    @State private var alertMessage = ""
     
-    enum Role {
-            case manager, employee
-        }
-    
-    let roles = ["Manager", "Employee"]
     
     var body: some View {
         NavigationView{
             ZStack{
                 backgroundColor
                     .ignoresSafeArea()
-                // Invisible NavigationLinks
-                NavigationLink(destination: ManagerHomePage().navigationBarBackButtonHidden(true), isActive: $navigateToManager) { EmptyView() }
-                                NavigationLink(destination: EmployeeHomePage().navigationBarBackButtonHidden(true), isActive: $navigateToEmployee) { EmptyView() }
-                
                 GeometryReader{ (proxy : GeometryProxy) in
-                              VStack(alignment: .trailing) {
-                               Image("LoginBgBlob").edgesIgnoringSafeArea(.top)
-                              }
-                              .frame(width: proxy.size.width, height:proxy.size.height , alignment: .topLeading)
+                    VStack(alignment: .trailing) {
+                        Image("LoginBgBlob").edgesIgnoringSafeArea(.top)
                     }
-                    
+                    .frame(width: proxy.size.width, height:proxy.size.height , alignment: .topLeading)
+                }
+                
                 VStack{
-                    // Role Picker
-                    
-                    HStack {
-                        Text("Choose Role:")
-                            .foregroundColor(.white)
-                            .bold()
-                        Spacer()
-                        Picker("Choose Role:", selection: $selectedRole) {
-                            Text("Manager").tag("Manager")
-                            Text("Employee").tag("Employee")
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .accentColor(.white)
-                        .bold()
-                    }
-                    .padding()
-                    .background(lightGreenColor)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
                     
                     Spacer()
                     
-                    // Employee ID Field
+                    // Email Field
                     VStack {
                         HStack {
-                            Image(systemName: "person.fill")
+                            Image(systemName: "mail.fill")
                                 .foregroundColor(.yellow)
                             
                             VStack {
@@ -93,10 +66,10 @@ struct LoginScreen: View {
                                     .padding(.trailing, 16)
                                     .foregroundColor(.white)
                                     .bold()
+                                    .textCase(.lowercase)
                                     .placeholder(when: email.isEmpty){
                                         Text("Email")
-                                            .foregroundColor(.white)
-                                            .bold()
+                                            .foregroundColor(textFieldColor)
                                             .padding(.leading, 16)
                                     }
                                 
@@ -124,9 +97,9 @@ struct LoginScreen: View {
                                     .padding(.trailing, 16)
                                     .foregroundColor(.white)
                                     .bold()
-                                    .placeholder(when: email.isEmpty){
+                                    .placeholder(when: password.isEmpty){
                                         Text("Password")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(textFieldColor)
                                             .bold()
                                             .padding(.leading, 16)
                                     }
@@ -137,9 +110,9 @@ struct LoginScreen: View {
                                     .padding(.trailing, 16)
                                     .bold()
                                     .foregroundColor(.white)
-                                    .placeholder(when: email.isEmpty){
+                                    .placeholder(when: password.isEmpty){
                                         Text("Password")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(textFieldColor)
                                             .bold()
                                             .padding(.leading, 16)
                                     }
@@ -162,6 +135,16 @@ struct LoginScreen: View {
                     }
                     .padding()
                     
+                    HStack {
+                        Spacer()
+                        Button (action: {}){
+                            Text("Forgot Password?")
+                                .foregroundColor(buttonGreenColor)
+                                .bold()
+                        }
+                    }
+                    .padding(.horizontal)
+                    
                     Spacer()
                     
                     //Login Button
@@ -178,6 +161,11 @@ struct LoginScreen: View {
                             .padding(.top, 16)
                             .bold()
                     }
+                    .fullScreenCover(isPresented: $isAuthenticated, onDismiss: {
+                                
+                            }) {
+                                HomePage()
+                            }
                     
                     Spacer()
                 }
@@ -185,20 +173,32 @@ struct LoginScreen: View {
                 
             }
         }.navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Login Failed"),
+                          message: Text(alertMessage),
+                          dismissButton: .default(Text("OK")))
+                }
         
         
     }
     
     func login() {
         
-                if selectedRole == "Manager" {
-                    navigateToManager = true
-                } else if selectedRole == "Employee" {
-                    navigateToEmployee = true
-                }
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                self.alertMessage = "Invalid Login Credentials. Please check your email and password and try again"
+                self.showAlert = true
+                
+            } else {
+                
+                print("Login successful")
+                self.isAuthenticated = true
             }
-
+        }
+        
+    }
 }
 
 #Preview {
@@ -209,13 +209,13 @@ struct LoginScreen: View {
 
 extension  View {
     func placeholder<Content: View>(
-    when shouldShow: Bool,
-    alignment: Alignment = .leading,
-    @ViewBuilder placeholder: () -> Content) -> some View {
-        ZStack(alignment: alignment){
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+            ZStack(alignment: alignment){
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+            }
         }
-    }
 }
 

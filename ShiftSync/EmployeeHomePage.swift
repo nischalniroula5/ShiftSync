@@ -69,9 +69,7 @@ struct EmployeeHomePage: View {
                 .padding()
             }
             .navigationBarItems(
-                leading: Image(systemName: "line.horizontal.3")
-                    .foregroundColor(buttonGreenColor),
-                trailing: Image(systemName: "bell.fill")
+                leading: Image(systemName: "bell.fill")
                     .foregroundColor(buttonGreenColor)
             )
             .navigationBarTitleDisplayMode(.inline)

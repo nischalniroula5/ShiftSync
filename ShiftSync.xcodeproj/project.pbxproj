@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370B44782B3B7B060041E5B4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B44772B3B7B060041E5B4 /* HomePage.swift */; };
+		370B447A2B3B7B5E0041E5B4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B44792B3B7B5E0041E5B4 /* SettingsView.swift */; };
+		370B447C2B3B7B7D0041E5B4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B447B2B3B7B7D0041E5B4 /* ProfileView.swift */; };
 		373049FF2B37C11200F16BF9 /* ShiftSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373049FE2B37C11200F16BF9 /* ShiftSyncApp.swift */; };
 		37304A012B37C11200F16BF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37304A002B37C11200F16BF9 /* ContentView.swift */; };
 		37304A032B37C11600F16BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37304A022B37C11600F16BF9 /* Assets.xcassets */; };
@@ -41,10 +44,17 @@
 		37304A462B38416B00F16BF9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 37304A452B38416B00F16BF9 /* FirebaseStorage */; };
 		37304A482B38416B00F16BF9 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 37304A472B38416B00F16BF9 /* FirebaseStorageCombine-Community */; };
 		37304A4C2B385ADB00F16BF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37304A4B2B385ADB00F16BF9 /* GoogleService-Info.plist */; };
-		37304A4E2B3A5CCB00F16BF9 /* SideMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37304A4D2B3A5CCB00F16BF9 /* SideMenuTest.swift */; };
+		3734F18D2B3C3231008FE63B /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F18C2B3C3231008FE63B /* People.swift */; };
+		3734F18F2B3C5ECE008FE63B /* ViewEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */; };
+		3734F1912B3C6605008FE63B /* AddEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1902B3C6605008FE63B /* AddEmployee.swift */; };
+		3734F1942B3CF091008FE63B /* AddRosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1932B3CF090008FE63B /* AddRosterView.swift */; };
+		3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1952B3CFF33008FE63B /* EmployeeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370B44772B3B7B060041E5B4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		370B44792B3B7B5E0041E5B4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		370B447B2B3B7B7D0041E5B4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		373049FB2B37C11200F16BF9 /* ShiftSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiftSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373049FE2B37C11200F16BF9 /* ShiftSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftSyncApp.swift; sourceTree = "<group>"; };
 		37304A002B37C11200F16BF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,7 +64,11 @@
 		37304A0E2B37EEB400F16BF9 /* ManagerHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerHomePage.swift; sourceTree = "<group>"; };
 		37304A102B37EECC00F16BF9 /* EmployeeHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeHomePage.swift; sourceTree = "<group>"; };
 		37304A4B2B385ADB00F16BF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		37304A4D2B3A5CCB00F16BF9 /* SideMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTest.swift; sourceTree = "<group>"; };
+		3734F18C2B3C3231008FE63B /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmployee.swift; sourceTree = "<group>"; };
+		3734F1902B3C6605008FE63B /* AddEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployee.swift; sourceTree = "<group>"; };
+		3734F1932B3CF090008FE63B /* AddRosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRosterView.swift; sourceTree = "<group>"; };
+		3734F1952B3CFF33008FE63B /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,8 @@
 		373049FD2B37C11200F16BF9 /* ShiftSync */ = {
 			isa = PBXGroup;
 			children = (
+				370B44772B3B7B060041E5B4 /* HomePage.swift */,
+				370B447B2B3B7B7D0041E5B4 /* ProfileView.swift */,
 				373049FE2B37C11200F16BF9 /* ShiftSyncApp.swift */,
 				37304A002B37C11200F16BF9 /* ContentView.swift */,
 				37304A022B37C11600F16BF9 /* Assets.xcassets */,
@@ -121,7 +137,10 @@
 				37304A0C2B37C3D100F16BF9 /* LoginScreen.swift */,
 				37304A0E2B37EEB400F16BF9 /* ManagerHomePage.swift */,
 				37304A102B37EECC00F16BF9 /* EmployeeHomePage.swift */,
-				37304A4D2B3A5CCB00F16BF9 /* SideMenuTest.swift */,
+				370B44792B3B7B5E0041E5B4 /* SettingsView.swift */,
+				3734F1922B3CEDB7008FE63B /* People View */,
+				3734F1932B3CF090008FE63B /* AddRosterView.swift */,
+				3734F1972B3CFF6D008FE63B /* Model */,
 			);
 			path = ShiftSync;
 			sourceTree = "<group>";
@@ -132,6 +151,24 @@
 				37304A052B37C11600F16BF9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3734F1922B3CEDB7008FE63B /* People View */ = {
+			isa = PBXGroup;
+			children = (
+				3734F18C2B3C3231008FE63B /* People.swift */,
+				3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */,
+				3734F1902B3C6605008FE63B /* AddEmployee.swift */,
+			);
+			path = "People View";
+			sourceTree = "<group>";
+		};
+		3734F1972B3CFF6D008FE63B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3734F1952B3CFF33008FE63B /* EmployeeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,12 +273,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3734F18F2B3C5ECE008FE63B /* ViewEmployee.swift in Sources */,
 				37304A012B37C11200F16BF9 /* ContentView.swift in Sources */,
-				37304A4E2B3A5CCB00F16BF9 /* SideMenuTest.swift in Sources */,
+				370B447C2B3B7B7D0041E5B4 /* ProfileView.swift in Sources */,
+				3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */,
+				370B447A2B3B7B5E0041E5B4 /* SettingsView.swift in Sources */,
 				37304A0F2B37EEB400F16BF9 /* ManagerHomePage.swift in Sources */,
+				3734F18D2B3C3231008FE63B /* People.swift in Sources */,
 				373049FF2B37C11200F16BF9 /* ShiftSyncApp.swift in Sources */,
 				37304A112B37EECC00F16BF9 /* EmployeeHomePage.swift in Sources */,
+				370B44782B3B7B060041E5B4 /* HomePage.swift in Sources */,
+				3734F1942B3CF091008FE63B /* AddRosterView.swift in Sources */,
 				37304A0D2B37C3D100F16BF9 /* LoginScreen.swift in Sources */,
+				3734F1912B3C6605008FE63B /* AddEmployee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

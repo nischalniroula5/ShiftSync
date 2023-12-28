@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct ManagerHomePage: View {
+    
     @State private var currentTime = Date()
+    @State private var showingPeopleView = false
     
     let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -44,7 +46,15 @@ struct ManagerHomePage: View {
                     let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
                                    
                     LazyVGrid(columns: gridItems, spacing: 20) {
-                        GridMenuButton(title: "People", systemImageName: "person.2.fill")
+                        Button(action: {
+                                                showingPeopleView = true
+                                            }) {
+                                                GridMenuButton(title: "People", systemImageName: "person.2.fill")
+                                            }
+                                            .fullScreenCover(isPresented: $showingPeopleView) {
+                                                People()
+                                            }
+                        
                         GridMenuButton(title: "Roster", systemImageName: "suitcase.fill")
                         GridMenuButton(title: "Tasks", systemImageName: "list.bullet.rectangle.portrait.fill")
                     }
@@ -56,13 +66,12 @@ struct ManagerHomePage: View {
                 .padding()
             }
             .navigationBarItems(
-                leading: Image(systemName: "line.horizontal.3")
-                    .foregroundColor(buttonGreenColor),
-                trailing: Image(systemName: "bell.fill")
+                leading: Image(systemName: "bell.fill")
                     .foregroundColor(buttonGreenColor)
             )
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
+            
         }
     }
 }
@@ -89,7 +98,7 @@ struct GridMenuButton: View {
                         Spacer()
                         Image(systemName: systemImageName)
                             .font(.largeTitle)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(appWhiteColor)
                             .padding([.bottom, .trailing])
                     }
                 }
