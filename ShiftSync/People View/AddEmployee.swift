@@ -11,8 +11,6 @@ struct AddEmployee: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var employee = EmployeeModel()
     
-    @State private var selectedRole = "Manager"
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,6 +18,27 @@ struct AddEmployee: View {
                     .ignoresSafeArea()
                 
                 VStack {
+                    // Role Picker
+                    
+                    HStack {
+                        Text("Choose Role:")
+                            .foregroundColor(appWhiteColor)
+                            .bold()
+                        Spacer()
+                        Picker("", selection: $employee.role) {
+                            Text("Manager").tag("Manager")
+                            Text("Employee").tag("Employee")
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        .accentColor(appWhiteColor)
+                        .bold()
+                    }
+                    .padding()
+                    .background(lightGreenColor)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    
+                    
                     employeeForm
                     addEmployeeButton
                     Spacer()
@@ -120,12 +139,6 @@ struct AddEmployee: View {
             }
             .sectionStyle()
             
-            Picker("Select Role", selection: $selectedRole) {
-                                    Text("Manager").tag("Manager")
-                                    Text("Employee").tag("Employee")
-                                }
-            .pickerStyle(.menu)
-                                .padding()
         }
         .scrollContentBackground(.hidden)
     }

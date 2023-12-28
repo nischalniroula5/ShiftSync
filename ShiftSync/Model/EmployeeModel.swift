@@ -6,11 +6,12 @@
 //
 
 import Foundation
-import SwiftUI
+import FirebaseFirestoreSwift
 
 
-struct EmployeeModel: Identifiable {
-    var id = UUID()
+struct EmployeeModel: Identifiable, Codable {
+    
+    @DocumentID var id : String?
     var firstName: String = ""
     var lastName: String = ""
     var employeeID: String = ""
@@ -19,4 +20,8 @@ struct EmployeeModel: Identifiable {
     var emailAddress: String = ""
     var dateOfBirth: Date = Date()
     var role: String = "Employee"
+    
+    var dictionary: [String: Any] {
+        return ["firstName": firstName, "lastName": lastName, "employeeID": employeeID, "address": address, "phoneNumber": phoneNumber, "emailAddress": emailAddress, "dateOfBirth": dateOfBirth, "role": role]
+    }
 }
