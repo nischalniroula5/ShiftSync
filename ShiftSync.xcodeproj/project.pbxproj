@@ -49,6 +49,7 @@
 		3734F1912B3C6605008FE63B /* AddEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1902B3C6605008FE63B /* AddEmployee.swift */; };
 		3734F1942B3CF091008FE63B /* AddRosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1932B3CF090008FE63B /* AddRosterView.swift */; };
 		3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1952B3CFF33008FE63B /* EmployeeModel.swift */; };
+		3734F1992B3E585E008FE63B /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		3734F1902B3C6605008FE63B /* AddEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployee.swift; sourceTree = "<group>"; };
 		3734F1932B3CF090008FE63B /* AddRosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRosterView.swift; sourceTree = "<group>"; };
 		3734F1952B3CFF33008FE63B /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				3734F1922B3CEDB7008FE63B /* People View */,
 				3734F1932B3CF090008FE63B /* AddRosterView.swift */,
 				3734F1972B3CFF6D008FE63B /* Model */,
+				3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */,
 			);
 			path = ShiftSync;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				3734F18F2B3C5ECE008FE63B /* ViewEmployee.swift in Sources */,
 				37304A012B37C11200F16BF9 /* ContentView.swift in Sources */,
+				3734F1992B3E585E008FE63B /* EmployeeViewModel.swift in Sources */,
 				370B447C2B3B7B7D0041E5B4 /* ProfileView.swift in Sources */,
 				3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */,
 				370B447A2B3B7B5E0041E5B4 /* SettingsView.swift in Sources */,
