@@ -1,9 +1,15 @@
+//
+//  Roster.swift
+//  ShiftSync
+//
+//  Created by Nischal Niroula on 30/12/2023.
+//
+
 import SwiftUI
 
-struct People: View {
-    
-    @State private var showingViewEmployeeView = false
-    @State private var showingAddEmployeeView = false
+struct Roster: View {
+    @State private var showingViewRosterView = false
+    @State private var showingAddRosterView = false
     @State private var viewEmployeeOffset = UIScreen.main.bounds.width
     
     @Environment(\.presentationMode) var presentationMode
@@ -11,20 +17,19 @@ struct People: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Set the background color for the entire screen
                 backgroundColor
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
                     Button(action: {
-                            showingViewEmployeeView = true
+                            showingViewRosterView = true
                                         }) {
                                             HStack {
-                                                Text("View Employee")
+                                                Text("View Roster")
                                                     .foregroundColor(.white)
                                                     .bold()
                                                 Spacer()
-                                                Image(systemName: "person.2.fill")
+                                                Image(systemName: "calendar")
                                                     .font(.title)
                                                     .foregroundColor(appWhiteColor)
                                                 
@@ -35,19 +40,19 @@ struct People: View {
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
                                         }
-                                        .fullScreenCover(isPresented: $showingViewEmployeeView) {
-                                            ViewEmployee()
+                                        .fullScreenCover(isPresented: $showingViewRosterView) {
+                                            ViewRoster()
                                         }
                     
                     Button(action: {
-                            showingAddEmployeeView = true
+                            showingAddRosterView = true
                                         }) {
                                             HStack {
-                                                Text("Add Employee")
+                                                Text("Add Roster")
                                                     .foregroundColor(.white)
                                                     .bold()
                                                 Spacer()
-                                                Image(systemName: "person.fill.badge.plus")
+                                                Image(systemName: "calendar.badge.plus")
                                                     .font(.title)
                                                     .foregroundColor(appWhiteColor)
                                                 
@@ -58,8 +63,8 @@ struct People: View {
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
                                         }
-                                        .fullScreenCover(isPresented: $showingAddEmployeeView) {
-                                            AddEmployee()
+                                        .fullScreenCover(isPresented: $showingAddRosterView) {
+                                            AddRosterView(rosterViewModel: RosterViewModel())
                                         }
                     
                     Spacer()
@@ -85,7 +90,7 @@ struct People: View {
                 
                 ToolbarItem(placement: .principal) {
                                 HStack {
-                                    Text("People")
+                                    Text("Roster")
                                         .font(.system(size: 20))
                                         .foregroundColor(buttonGreenColor)
                                         .bold()
@@ -93,32 +98,9 @@ struct People: View {
                             }
                         }
                         .navigationBarTitleDisplayMode(.inline)
-                        //.navigationBarBackButtonHidden(true)
-                        //.navigationBarHidden(true)
         }
     }
 }
-
-struct People_Previews: PreviewProvider {
-    static var previews: some View {
-        People()
-    }
+#Preview {
+    Roster()
 }
-
-
-/*
- HStack {
-     Text("Add Employee")
-         .foregroundColor(.white)
-         .bold()
-     Spacer()
-     Image(systemName: "person.fill.badge.plus")
-         .font(.title)
-         .foregroundColor(appWhiteColor)
-     
- }
- .padding()
- .background(lightGreenColor)
- .cornerRadius(10)
- .padding(.horizontal)
- */

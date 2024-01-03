@@ -4,6 +4,8 @@ struct ManagerHomePage: View {
     
     @State private var currentTime = Date()
     @State private var showingPeopleView = false
+    @State private var showingRosterView = false
+    @State private var showingTasksView = false
     
     let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -54,9 +56,24 @@ struct ManagerHomePage: View {
                                             .fullScreenCover(isPresented: $showingPeopleView) {
                                                 People()
                                             }
+                        Button(action: {
+                                                showingRosterView = true
+                                            }) {
+                                                GridMenuButton(title: "Roster", systemImageName: "calendar")
+                                            }
+                                            .fullScreenCover(isPresented: $showingRosterView) {
+                                                Roster()
+                                            }
                         
-                        GridMenuButton(title: "Roster", systemImageName: "suitcase.fill")
-                        GridMenuButton(title: "Tasks", systemImageName: "list.bullet.rectangle.portrait.fill")
+                        Button(action: {
+                                                showingTasksView = true
+                                            }) {
+                                                GridMenuButton(title: "Tasks", systemImageName: "note.text")
+                                            }
+                                            .fullScreenCover(isPresented: $showingTasksView) {
+                                                Tasks()
+                                            }
+                       
                     }
                     .padding(.bottom, 100)
                 }

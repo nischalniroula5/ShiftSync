@@ -66,6 +66,7 @@ struct LoginScreen: View {
                                     .padding(.trailing, 16)
                                     .foregroundColor(.white)
                                     .bold()
+                                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                                     .textCase(.lowercase)
                                     .placeholder(when: email.isEmpty){
                                         Text("Email")

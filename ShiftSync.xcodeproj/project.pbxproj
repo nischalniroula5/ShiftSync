@@ -47,9 +47,16 @@
 		3734F18D2B3C3231008FE63B /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F18C2B3C3231008FE63B /* People.swift */; };
 		3734F18F2B3C5ECE008FE63B /* ViewEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */; };
 		3734F1912B3C6605008FE63B /* AddEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1902B3C6605008FE63B /* AddEmployee.swift */; };
-		3734F1942B3CF091008FE63B /* AddRosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1932B3CF090008FE63B /* AddRosterView.swift */; };
 		3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1952B3CFF33008FE63B /* EmployeeModel.swift */; };
 		3734F1992B3E585E008FE63B /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */; };
+		3734F19D2B3EC7BC008FE63B /* EditEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F19C2B3EC7BC008FE63B /* EditEmployee.swift */; };
+		3734F19F2B3FA177008FE63B /* Roster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F19E2B3FA177008FE63B /* Roster.swift */; };
+		3734F1A22B3FA3F7008FE63B /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1A12B3FA3F7008FE63B /* Tasks.swift */; };
+		3734F1A72B3FA59E008FE63B /* ViewRoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1A62B3FA59E008FE63B /* ViewRoster.swift */; };
+		3734F1A92B3FA61A008FE63B /* AddTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1A82B3FA61A008FE63B /* AddTasks.swift */; };
+		3734F1AB2B3FA629008FE63B /* ViewTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1AA2B3FA629008FE63B /* ViewTasks.swift */; };
+		3734F1AF2B3FAC6E008FE63B /* RosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1AE2B3FAC6E008FE63B /* RosterModel.swift */; };
+		3734F1B12B3FAF87008FE63B /* AddRosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734F1B02B3FAF87008FE63B /* AddRosterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,9 +75,16 @@
 		3734F18C2B3C3231008FE63B /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEmployee.swift; sourceTree = "<group>"; };
 		3734F1902B3C6605008FE63B /* AddEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployee.swift; sourceTree = "<group>"; };
-		3734F1932B3CF090008FE63B /* AddRosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRosterView.swift; sourceTree = "<group>"; };
 		3734F1952B3CFF33008FE63B /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		3734F19C2B3EC7BC008FE63B /* EditEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployee.swift; sourceTree = "<group>"; };
+		3734F19E2B3FA177008FE63B /* Roster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roster.swift; sourceTree = "<group>"; };
+		3734F1A12B3FA3F7008FE63B /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		3734F1A62B3FA59E008FE63B /* ViewRoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRoster.swift; sourceTree = "<group>"; };
+		3734F1A82B3FA61A008FE63B /* AddTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTasks.swift; sourceTree = "<group>"; };
+		3734F1AA2B3FA629008FE63B /* ViewTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTasks.swift; sourceTree = "<group>"; };
+		3734F1AE2B3FAC6E008FE63B /* RosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterModel.swift; sourceTree = "<group>"; };
+		3734F1B02B3FAF87008FE63B /* AddRosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRosterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +155,9 @@
 				37304A102B37EECC00F16BF9 /* EmployeeHomePage.swift */,
 				370B44792B3B7B5E0041E5B4 /* SettingsView.swift */,
 				3734F1922B3CEDB7008FE63B /* People View */,
-				3734F1932B3CF090008FE63B /* AddRosterView.swift */,
+				3734F1A32B3FA4EC008FE63B /* Tasks */,
+				3734F1A02B3FA2AD008FE63B /* Roster */,
 				3734F1972B3CFF6D008FE63B /* Model */,
-				3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */,
 			);
 			path = ShiftSync;
 			sourceTree = "<group>";
@@ -162,6 +176,8 @@
 				3734F18C2B3C3231008FE63B /* People.swift */,
 				3734F18E2B3C5ECE008FE63B /* ViewEmployee.swift */,
 				3734F1902B3C6605008FE63B /* AddEmployee.swift */,
+				3734F1982B3E585E008FE63B /* EmployeeViewModel.swift */,
+				3734F19C2B3EC7BC008FE63B /* EditEmployee.swift */,
 			);
 			path = "People View";
 			sourceTree = "<group>";
@@ -170,8 +186,29 @@
 			isa = PBXGroup;
 			children = (
 				3734F1952B3CFF33008FE63B /* EmployeeModel.swift */,
+				3734F1AE2B3FAC6E008FE63B /* RosterModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3734F1A02B3FA2AD008FE63B /* Roster */ = {
+			isa = PBXGroup;
+			children = (
+				3734F19E2B3FA177008FE63B /* Roster.swift */,
+				3734F1A62B3FA59E008FE63B /* ViewRoster.swift */,
+				3734F1B02B3FAF87008FE63B /* AddRosterView.swift */,
+			);
+			path = Roster;
+			sourceTree = "<group>";
+		};
+		3734F1A32B3FA4EC008FE63B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				3734F1A12B3FA3F7008FE63B /* Tasks.swift */,
+				3734F1AA2B3FA629008FE63B /* ViewTasks.swift */,
+				3734F1A82B3FA61A008FE63B /* AddTasks.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,16 +317,23 @@
 				37304A012B37C11200F16BF9 /* ContentView.swift in Sources */,
 				3734F1992B3E585E008FE63B /* EmployeeViewModel.swift in Sources */,
 				370B447C2B3B7B7D0041E5B4 /* ProfileView.swift in Sources */,
+				3734F1A92B3FA61A008FE63B /* AddTasks.swift in Sources */,
 				3734F1962B3CFF33008FE63B /* EmployeeModel.swift in Sources */,
 				370B447A2B3B7B5E0041E5B4 /* SettingsView.swift in Sources */,
+				3734F1AB2B3FA629008FE63B /* ViewTasks.swift in Sources */,
+				3734F19F2B3FA177008FE63B /* Roster.swift in Sources */,
 				37304A0F2B37EEB400F16BF9 /* ManagerHomePage.swift in Sources */,
+				3734F1AF2B3FAC6E008FE63B /* RosterModel.swift in Sources */,
+				3734F1B12B3FAF87008FE63B /* AddRosterView.swift in Sources */,
 				3734F18D2B3C3231008FE63B /* People.swift in Sources */,
 				373049FF2B37C11200F16BF9 /* ShiftSyncApp.swift in Sources */,
 				37304A112B37EECC00F16BF9 /* EmployeeHomePage.swift in Sources */,
+				3734F19D2B3EC7BC008FE63B /* EditEmployee.swift in Sources */,
 				370B44782B3B7B060041E5B4 /* HomePage.swift in Sources */,
-				3734F1942B3CF091008FE63B /* AddRosterView.swift in Sources */,
+				3734F1A22B3FA3F7008FE63B /* Tasks.swift in Sources */,
 				37304A0D2B37C3D100F16BF9 /* LoginScreen.swift in Sources */,
 				3734F1912B3C6605008FE63B /* AddEmployee.swift in Sources */,
+				3734F1A72B3FA59E008FE63B /* ViewRoster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

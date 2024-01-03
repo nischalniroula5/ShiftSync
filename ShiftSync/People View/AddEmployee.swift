@@ -31,8 +31,6 @@ struct AddEmployee: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    // Role Picker
-                    
                     HStack {
                         Text("Choose Role:")
                             .foregroundColor(appWhiteColor)
@@ -50,8 +48,6 @@ struct AddEmployee: View {
                     .background(lightGreenColor)
                     .cornerRadius(10)
                     .padding(.horizontal)
-                    
-                    
                     employeeForm
                     addEmployeeButton
                     Spacer()
@@ -83,6 +79,7 @@ struct AddEmployee: View {
                     .keyboardType(.numberPad)
                     .foregroundColor(appWhiteColor)
                     .bold()
+                    .disableAutocorrection(true)
                     .placeholder(when: employee.employeeID.isEmpty){
                         Text("Employee ID")
                             .foregroundColor(textFieldColor)
@@ -92,6 +89,9 @@ struct AddEmployee: View {
                     .keyboardType(.namePhonePad)
                     .foregroundColor(appWhiteColor)
                     .bold()
+                    .disableAutocorrection(true)
+                    //.autocapitalization(.words)
+                    .textInputAutocapitalization(.words)
                     .placeholder(when: employee.firstName.isEmpty){
                         Text("First Name")
                             .foregroundColor(textFieldColor)
@@ -100,6 +100,9 @@ struct AddEmployee: View {
                     .keyboardType(.namePhonePad)
                     .foregroundColor(appWhiteColor)
                     .bold()
+                    .disableAutocorrection(true)
+                    //.autocapitalization(.words)
+                    .textInputAutocapitalization(.words)
                     .placeholder(when: employee.lastName.isEmpty){
                         Text("Last Name")
                             .foregroundColor(textFieldColor)
@@ -109,6 +112,8 @@ struct AddEmployee: View {
                     .keyboardType(.emailAddress)
                     .foregroundColor(appWhiteColor)
                     .bold()
+                    .disableAutocorrection(true)
+                    .textInputAutocapitalization(.words)
                     .placeholder(when: employee.address.isEmpty){
                         Text("Address")
                             .foregroundColor(textFieldColor)
@@ -132,6 +137,7 @@ struct AddEmployee: View {
                     .keyboardType(.phonePad)
                     .foregroundColor(appWhiteColor)
                     .bold()
+                    .disableAutocorrection(true)
                     .placeholder(when: employee.phoneNumber.isEmpty){
                         Text("Phone Number")
                             .foregroundColor(textFieldColor)
@@ -139,6 +145,7 @@ struct AddEmployee: View {
                 
                 TextField("", text: $employee.emailAddress)
                     .keyboardType(.emailAddress)
+                    .disableAutocorrection(true)
                     .foregroundColor(appWhiteColor)
                     .bold()
                     .placeholder(when: employee.emailAddress.isEmpty){

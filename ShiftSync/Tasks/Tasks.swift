@@ -1,9 +1,15 @@
+//
+//  Tasks.swift
+//  ShiftSync
+//
+//  Created by Nischal Niroula on 30/12/2023.
+//
+
 import SwiftUI
 
-struct People: View {
-    
-    @State private var showingViewEmployeeView = false
-    @State private var showingAddEmployeeView = false
+struct Tasks: View {
+    @State private var showingViewTasksView = false
+    @State private var showingAddTasksView = false
     @State private var viewEmployeeOffset = UIScreen.main.bounds.width
     
     @Environment(\.presentationMode) var presentationMode
@@ -17,14 +23,14 @@ struct People: View {
                 
                 VStack{
                     Button(action: {
-                            showingViewEmployeeView = true
+                            showingViewTasksView = true
                                         }) {
                                             HStack {
-                                                Text("View Employee")
+                                                Text("View Tasks")
                                                     .foregroundColor(.white)
                                                     .bold()
                                                 Spacer()
-                                                Image(systemName: "person.2.fill")
+                                                Image(systemName: "note.text")
                                                     .font(.title)
                                                     .foregroundColor(appWhiteColor)
                                                 
@@ -35,19 +41,19 @@ struct People: View {
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
                                         }
-                                        .fullScreenCover(isPresented: $showingViewEmployeeView) {
-                                            ViewEmployee()
+                                        .fullScreenCover(isPresented: $showingViewTasksView) {
+                                            ViewTasks()
                                         }
                     
                     Button(action: {
-                            showingAddEmployeeView = true
+                            showingAddTasksView = true
                                         }) {
                                             HStack {
-                                                Text("Add Employee")
+                                                Text("Add Tasks")
                                                     .foregroundColor(.white)
                                                     .bold()
                                                 Spacer()
-                                                Image(systemName: "person.fill.badge.plus")
+                                                Image(systemName: "note.text.badge.plus")
                                                     .font(.title)
                                                     .foregroundColor(appWhiteColor)
                                                 
@@ -58,8 +64,8 @@ struct People: View {
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
                                         }
-                                        .fullScreenCover(isPresented: $showingAddEmployeeView) {
-                                            AddEmployee()
+                                        .fullScreenCover(isPresented: $showingAddTasksView) {
+                                            AddTasks()
                                         }
                     
                     Spacer()
@@ -85,7 +91,7 @@ struct People: View {
                 
                 ToolbarItem(placement: .principal) {
                                 HStack {
-                                    Text("People")
+                                    Text("Tasks")
                                         .font(.system(size: 20))
                                         .foregroundColor(buttonGreenColor)
                                         .bold()
@@ -93,32 +99,9 @@ struct People: View {
                             }
                         }
                         .navigationBarTitleDisplayMode(.inline)
-                        //.navigationBarBackButtonHidden(true)
-                        //.navigationBarHidden(true)
         }
     }
 }
-
-struct People_Previews: PreviewProvider {
-    static var previews: some View {
-        People()
-    }
+#Preview {
+    Tasks()
 }
-
-
-/*
- HStack {
-     Text("Add Employee")
-         .foregroundColor(.white)
-         .bold()
-     Spacer()
-     Image(systemName: "person.fill.badge.plus")
-         .font(.title)
-         .foregroundColor(appWhiteColor)
-     
- }
- .padding()
- .background(lightGreenColor)
- .cornerRadius(10)
- .padding(.horizontal)
- */
