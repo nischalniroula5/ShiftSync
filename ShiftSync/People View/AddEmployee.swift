@@ -125,6 +125,7 @@ struct AddEmployee: View {
                     selection: $employee.dateOfBirth,
                     displayedComponents: .date
                 )
+                .colorScheme(.dark)
                 .datePickerStyle(DefaultDatePickerStyle())
                 .foregroundColor(appWhiteColor)
                 .padding(.bottom, 5)
@@ -186,6 +187,7 @@ struct AddEmployee: View {
             .sectionStyle()
             
         }
+        //.scrollDisabled(true)
         .scrollContentBackground(.hidden)
         
         

@@ -1,7 +1,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct RosterModel: Identifiable, Codable {
+struct RosterModel: Identifiable, Codable, Equatable {
     @DocumentID var id: String? // Firestore document ID
     var employeeID: String // ID of the employee assigned to the shift
     var employeeName: String // Name of the employee assigned to the shift

@@ -39,9 +39,10 @@ struct Roster: View {
                                             .cornerRadius(10)
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
+                                            .shadow(color: .black, radius: 2, x: 0, y: 4)
                                         }
                                         .fullScreenCover(isPresented: $showingViewRosterView) {
-                                            ViewRoster()
+                                            ViewRoster(rosterViewModel: RosterViewModel())
                                         }
                     
                     Button(action: {
@@ -62,6 +63,7 @@ struct Roster: View {
                                             .cornerRadius(10)
                                             .padding(.horizontal)
                                             .padding(.vertical, 10)
+                                            .shadow(color: .black, radius: 2, x: 0, y: 4)
                                         }
                                         .fullScreenCover(isPresented: $showingAddRosterView) {
                                             AddRosterView(rosterViewModel: RosterViewModel())

@@ -42,14 +42,23 @@ struct LoginScreen: View {
             ZStack{
                 backgroundColor
                     .ignoresSafeArea()
-                GeometryReader{ (proxy : GeometryProxy) in
-                    VStack(alignment: .trailing) {
-                        Image("LoginBgBlob").edgesIgnoringSafeArea(.top)
+                GeometryReader { proxy in
+                    VStack {
+                        Image("LoginBgBlob")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
+                            .edgesIgnoringSafeArea(.all)
                     }
-                    .frame(width: proxy.size.width, height:proxy.size.height , alignment: .topLeading)
+                    .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
                 }
+                .edgesIgnoringSafeArea(.top)
+
                 
                 VStack{
+                    
+                    Image("ShiftSyncLogo")
+                        .padding(.top, 5)
                     
                     Spacer()
                     
@@ -76,6 +85,7 @@ struct LoginScreen: View {
                                 
                             }
                         }
+                        .padding(.top, 260)
                         
                         
                         Rectangle()
@@ -170,7 +180,7 @@ struct LoginScreen: View {
                     
                     Spacer()
                 }
-                .padding(.top, 350)
+                .padding()
                 
             }
         }.navigationBarHidden(true)
